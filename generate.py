@@ -38,7 +38,7 @@ def render(voting: Voting) -> None:
   print()
   votes_by_voter = reversed_dict(voting.votes)
   voterw = max(len(voter) + 1 for voter in votes_by_voter.keys())
-  for voter, votes in votes_by_voter.items():
+  for voter, votes in sorted(votes_by_voter.items()):
     voter += ':'
     print(f'- {voter:{voterw}}', ', '.join(votes))
 
